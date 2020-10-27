@@ -28,6 +28,10 @@ loop do
     puts get_city_names(dial_book)
     puts "Enter your selection: "
     city = gets.chomp.downcase
-    area_code = get_area_code(dial_book, city)
-    puts "the area code for #{city} is #{area_code}"
+    if dial_book.include?(city)
+        area_code = get_area_code(dial_book, city)
+        puts "the area code for #{city} is #{area_code}"
+    else
+        puts "Invalid city name"
+    end
 end
